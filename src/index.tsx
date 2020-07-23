@@ -15,8 +15,9 @@ type Props = {
   cardStyles?: object;
   height?: number;
   width?: number;
+  fontSize?: number;
 } & typeof defaultProps;
-const defaultProps = { height: 190, width: 300 };
+const defaultProps = { height: 190, width: 300, fontSize: 20 };
 
 const CreditCardDisplay = (props: Props) => {
   return (
@@ -35,7 +36,13 @@ const CreditCardDisplay = (props: Props) => {
             >
               <View style={styles.imageContainer}>
                 <View style={{ height: '50%' }} />
-                <Text style={styles.cardNumber}>
+                <Text
+                  style={{
+                    fontSize: props.fontSize,
+                    alignSelf: 'center',
+                    color: '#222',
+                  }}
+                >
                   {creditcardutils.formatCardNumber(String(props.number))}
                 </Text>
                 <View style={{ flexDirection: 'row' }}>
@@ -43,24 +50,58 @@ const CreditCardDisplay = (props: Props) => {
                     {props.since && (
                       <>
                         <Text
-                          style={{ ...styles.groupLabel, textAlign: 'right' }}
+                          style={{
+                            ...styles.groupLabel,
+                            fontSize: props.fontSize * 0.7,
+                            textAlign: 'right',
+                          }}
                         >
                           CUSTOMER{'\n'}SINCE
                         </Text>
-                        <Text>{props.since}</Text>
+                        <Text
+                          style={{
+                            fontSize: props.fontSize * 0.7,
+                            color: '#222',
+                          }}
+                        >
+                          {props.since}
+                        </Text>
                       </>
                     )}
                   </View>
                   <View style={styles.groupContainer}>
-                    <Text style={{ ...styles.groupLabel, textAlign: 'center' }}>
-                      VALID{'\n'}THRU
-                    </Text>
-                    <Text>
-                      {creditcardutils.formatCardExpiry(props.expiration)}
-                    </Text>
+                    {props.expiration && (
+                      <>
+                        <Text
+                          style={{
+                            ...styles.groupLabel,
+                            fontSize: props.fontSize * 0.7,
+                            textAlign: 'center',
+                          }}
+                        >
+                          VALID{'\n'}THRU
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: props.fontSize * 0.7,
+                            color: '#222',
+                          }}
+                        >
+                          {creditcardutils.formatCardExpiry(props.expiration)}
+                        </Text>
+                      </>
+                    )}
                   </View>
                 </View>
-                <Text style={styles.cardName}>{props.name}</Text>
+                <Text
+                  style={{
+                    fontSize: props.fontSize,
+                    marginTop: 5,
+                    color: '#222',
+                  }}
+                >
+                  {props.name}
+                </Text>
               </View>
             </ImageBackground>
           </View>
@@ -75,7 +116,9 @@ const CreditCardDisplay = (props: Props) => {
               <View style={{ height: '45%' }} />
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ width: '82%' }} />
-                <Text style={styles.cvcText}>{props.cvc}</Text>
+                <Text style={{ fontSize: props.fontSize, alignSelf: 'center' }}>
+                  {props.cvc}
+                </Text>
               </View>
             </ImageBackground>
           </View>
@@ -103,14 +146,12 @@ const styles = StyleSheet.create({
     marginRight: '2%',
   },
   groupLabel: {
-    color: '#222',
-    // textAlign: 'right',
+    color: '#333',
     textAlignVertical: 'center',
     marginRight: '2%',
-    fontSize: 10,
   },
   imageContainer: {
-    padding: 20,
+    padding: 15,
   },
   cardName: {
     fontSize: 20,

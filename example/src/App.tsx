@@ -21,6 +21,9 @@ export default function App() {
           expiration="06/21"
           name="John J. Doe"
           since="2004"
+          height={126}
+          width={200}
+          fontSize={12}
         />
       </View>
     </View>
