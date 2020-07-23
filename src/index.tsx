@@ -6,39 +6,28 @@ import creditcardutils from 'creditcardutils';
 
 type Props = {
   number: number;
-  since?: string;
   name: string;
   cvc: number;
   expiration: string;
+  since?: string;
   frontStyles?: object;
   backStyles?: object;
   cardStyles?: object;
+  height?: number;
+  width?: number;
 } & typeof defaultProps;
-const defaultProps = { height: 150, width: 300 };
+const defaultProps = { height: 190, width: 300 };
 
 const CreditCardDisplay = (props: Props) => {
   return (
-    <View style={styles.container}>
+    <View style={{ height: props.height, width: props.width }}>
       <FlipCard
-        style={{
-          ...styles.card,
-          ...props.cardStyles,
-        }}
+        style={props.cardStyles}
         flipHorizontal={true}
         flipVertical={false}
       >
-        <View
-          style={{
-            ...styles.cardSide,
-            ...styles.cardFront,
-            ...props.frontStyles,
-          }}
-        >
-          <View
-            style={{
-              ...styles.cardContent,
-            }}
-          >
+        <View style={props.frontStyles}>
+          <View style={{ height: props.height, width: props.width }}>
             <ImageBackground
               source={require('./assets/images/card-front.png')}
               style={styles.imageBackground}
@@ -58,7 +47,7 @@ const CreditCardDisplay = (props: Props) => {
                         >
                           CUSTOMER{'\n'}SINCE
                         </Text>
-                        <Text style={styles.groupText}>{props.since}</Text>
+                        <Text>{props.since}</Text>
                       </>
                     )}
                   </View>
@@ -66,7 +55,7 @@ const CreditCardDisplay = (props: Props) => {
                     <Text style={{ ...styles.groupLabel, textAlign: 'center' }}>
                       VALID{'\n'}THRU
                     </Text>
-                    <Text style={styles.groupText}>
+                    <Text>
                       {creditcardutils.formatCardExpiry(props.expiration)}
                     </Text>
                   </View>
@@ -76,18 +65,8 @@ const CreditCardDisplay = (props: Props) => {
             </ImageBackground>
           </View>
         </View>
-        <View
-          style={{
-            ...styles.cardSide,
-            ...styles.cardBack,
-            ...props.backStyles,
-          }}
-        >
-          <View
-            style={{
-              ...styles.cardContent,
-            }}
-          >
+        <View style={props.backStyles}>
+          <View style={{ height: props.height, width: props.width }}>
             <ImageBackground
               source={require('./assets/images/card-back.png')}
               style={styles.imageBackground}
@@ -109,24 +88,11 @@ const CreditCardDisplay = (props: Props) => {
 export default CreditCardDisplay;
 
 const styles = StyleSheet.create({
-  container: {
-    height: 190,
-    width: 300,
-  },
-  card: {},
-  cardContent: {
-    height: 190,
-    width: 300,
-  },
-  cardSide: {},
-  cardFront: {},
-  cardBack: {},
   imageBackground: {
     height: '100%',
     width: '100%',
   },
   cardNumber: {
-    // width: '80%',
     fontSize: 20,
     alignSelf: 'center',
   },
@@ -143,14 +109,12 @@ const styles = StyleSheet.create({
     marginRight: '2%',
     fontSize: 10,
   },
-  groupText: {
-    //
-  },
   imageContainer: {
     padding: 20,
   },
   cardName: {
     fontSize: 20,
+    marginTop: 5,
   },
   cvcText: {
     // width: '80%',
@@ -158,3 +122,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
+
+CreditCardDisplay.defaultProps = defaultProps;
