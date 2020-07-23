@@ -135,10 +135,6 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
   },
-  cardNumber: {
-    fontSize: 20,
-    alignSelf: 'center',
-  },
   groupContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -152,15 +148,6 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     padding: 15,
-  },
-  cardName: {
-    fontSize: 20,
-    marginTop: 5,
-  },
-  cvcText: {
-    // width: '80%',
-    fontSize: 20,
-    alignSelf: 'center',
   },
 });
 
