@@ -46,6 +46,7 @@
     "@react-native-community/bob": "^0.16.2",
     "@react-native-community/eslint-config": "^2.0.0",
     "@release-it/conventional-changelog": "^1.1.4",
+    "@types/creditcardutils": "^1.0.0",
     "@types/jest": "^26.0.0",
     "@types/react": "^16.9.19",
     "@types/react-native": "0.62.13",
@@ -140,6 +141,9 @@
     ]
   },
   "dependencies": {
+    "@types/react-native-flip-card": "^3.5.0",
+    "creditcardutils": "^1.0.0",
+    "prop-types": "^15.7.2",
     "react-native-flip-card": "^3.5.6"
   }
 }
