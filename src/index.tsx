@@ -45,11 +45,9 @@ const CreditCardDisplay = (props: Props) => {
               imageStyle={{ borderRadius: 15 }}
             >
               <View style={styles.imageContainer}>
-                <View style={{ height: '60%' }} />
+                <View style={{ height: '50%' }} />
                 <Text style={styles.cardNumber}>
-                  {creditcardutils
-                    .formatCardNumber(String(props.number))
-                    .replace(/ /g, ' · ')}
+                  {creditcardutils.formatCardNumber(String(props.number))}
                 </Text>
                 <View style={{ flexDirection: 'row' }}>
                   <View style={styles.groupContainer}>
@@ -95,7 +93,11 @@ const CreditCardDisplay = (props: Props) => {
               style={styles.imageBackground}
               imageStyle={{ borderRadius: 15 }}
             >
-              <Text>back</Text>
+              <View style={{ height: '45%' }} />
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ width: '82%' }} />
+                <Text style={styles.cvcText}>{props.cvc}</Text>
+              </View>
             </ImageBackground>
           </View>
         </View>
@@ -125,7 +127,7 @@ const styles = StyleSheet.create({
   },
   cardNumber: {
     // width: '80%',
-    fontSize: 24,
+    fontSize: 20,
     alignSelf: 'center',
   },
   groupContainer: {
@@ -149,5 +151,10 @@ const styles = StyleSheet.create({
   },
   cardName: {
     fontSize: 20,
+  },
+  cvcText: {
+    // width: '80%',
+    fontSize: 20,
+    alignSelf: 'center',
   },
 });
