@@ -5,19 +5,53 @@ import FlipCard from 'react-native-flip-card';
 import creditcardutils from 'creditcardutils';
 
 type Props = {
-  number: number;
+  /** Number to display on the front of the card */
+  number: number | string;
+
+  /** Name to display on the front of the card */
   name: string;
-  cvc: number;
+
+  /** cvc to display on the back of the card */
+  cvc: number | string;
+
+  /** Expiration Date to display on the front of the card. displayed as given, so it should be formatted */
   expiration: string;
-  since?: string;
+
+  /** Year for `Customer Since` */
+  since?: number | string;
+
+  /** Additional styles to apply to the front of the card */
   frontStyles?: object;
+
+  /** Additional styles to apply to the back of the card */
   backStyles?: object;
+
+  /** Additional styles to apply to the component from `react-native-flip-card` */
   cardStyles?: object;
+
+  /** height for card. default: 190 */
   height?: number;
+
+  /** width for card. default: 300 */
   width?: number;
+
+  /** base font size to use. Will scale all displayed text. default: 20 */
   fontSize?: number;
+
+  /** Friction for the card flip. I couldn't figure out what this does, but I'm just passing it to `react-native-flip-card` if anyone wants it */
+  friction?: number;
+
+  /** Is the card flipped? Use this to programmatically `flip` the card. */
+  flipped?: boolean;
 } & typeof defaultProps;
-const defaultProps = { height: 190, width: 300, fontSize: 20 };
+
+const defaultProps = {
+  height: 190,
+  width: 300,
+  fontSize: 20,
+  friction: 6,
+  flipped: false,
+};
 
 const CreditCardDisplay = (props: Props) => {
   return (
@@ -26,6 +60,7 @@ const CreditCardDisplay = (props: Props) => {
         style={props.cardStyles}
         flipHorizontal={true}
         flipVertical={false}
+        flip={props.flipped}
       >
         <View style={props.frontStyles}>
           <View style={{ height: props.height, width: props.width }}>

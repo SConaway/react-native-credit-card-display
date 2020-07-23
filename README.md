@@ -8,15 +8,41 @@ Credit Card Component for React Native -- Display Only
 npm install react-native-credit-card-display
 ```
 
-## Usage
+## Basic Example
 
 ```js
 import CreditCardDisplay from "react-native-credit-card-display";
 
 // ...
 
-const result = await CreditCardDisplay.multiply(3, 7);
+return (
+  {/* ... */}
+  <CreditCardDisplay
+    number={4242424242424242}
+    cvc={123}
+    expiration="04/21"
+    name="John J. Doe"
+    since="2004"
+  />
+)
 ```
+
+## Props
+
+| Prop | Description | Default Value | Required | Notes |
+| number | Number to display on the front of the card | `undefined` | Yes | can be a number or a string |
+| name | Name to display on the front of the card | `undefined` | Yes | |
+| expiration | Expiration Date to display on the front of the card | `undefined` | Yes | displayed as given, so it should be formatted |
+| cvc | cvc to display on the back of the card | `undefined` | Yes | can be a number or a string |
+| since | Year for `Customer Since` | `undefined` | no | can be a number or a string |
+| flipped | Is the card flipped? | `false` | no | Use this to programmatically `flip` the card. |
+| friction | Friction for the card flip | `6` | no | I couldn't figure out what this does, but I'm just passing it to `react-native-flip-card` if anyone wants it |
+| fontSize | base font size to use | `20` | no | will scale all displayed text |
+| height | height for card | `190` | no | |
+| width | width for card | `300` | no | |
+| cardStyles | Additional styles to apply to the component from `react-native-flip-card` | `{}` | no | |
+| frontStyles | Additional styles to apply to the front of the card | `{}` | no | |
+| backStyles | Additional styles to apply to the back of the card | `{}` | no | |
 
 ## Contributing
 
