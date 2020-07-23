@@ -66,7 +66,7 @@ const CreditCardDisplay = (props: Props) => {
                   </View>
                   <View style={styles.groupContainer}>
                     <Text style={{ ...styles.groupLabel, textAlign: 'center' }}>
-                      GOOD{'\n'}THRU
+                      VALID{'\n'}THRU
                     </Text>
                     <Text style={styles.groupText}>
                       {creditcardutils.formatCardExpiry(props.expiration)}
