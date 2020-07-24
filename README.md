@@ -30,6 +30,7 @@ return (
 ## Props
 
 | Prop | Description | Default Value | Required | Notes |
+|------|-------------|---------------|----------|-------|
 | number | Number to display on the front of the card | `undefined` | Yes | can be a number or a string |
 | name | Name to display on the front of the card | `undefined` | Yes | |
 | expiration | Expiration Date to display on the front of the card | `undefined` | Yes | displayed as given, so it should be formatted |
