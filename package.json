@@ -50,6 +50,7 @@
     "@types/jest": "^26.0.0",
     "@types/react": "^16.9.19",
     "@types/react-native": "0.62.13",
+    "@types/react-native-flip-card": "^3.5.0",
     "commitlint": "^8.3.5",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -143,9 +144,7 @@
     ]
   },
   "dependencies": {
-    "@types/react-native-flip-card": "^3.5.0",
     "creditcardutils": "^1.0.0",
-    "prop-types": "^15.7.2",
     "react-native-flip-card": "^3.5.6"
   }
 }
