@@ -18,7 +18,7 @@ export default function App() {
       </View>
       <View style={styles.cardContainer}>
         <CreditCardDisplay
-          number={4242424242424242}
+          number={'3088 0000 0000 0009'}
           cvc={123}
           expiration="06/21"
           name="John J. Doe"
