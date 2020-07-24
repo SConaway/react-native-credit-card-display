@@ -1,6 +1,6 @@
 {
   "name": "react-native-credit-card-display",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Credit Card Component for React Native -- Display Only",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
