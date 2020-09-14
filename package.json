@@ -27,7 +27,9 @@
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
     "stylecleanup": "stylecleanup fix \"{src,example}/**/*.{js,ts,tsx}\"",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "release": "release-it",
+    "release-it": "release-it"
   },
   "keywords": [
     "react-native",
@@ -93,7 +95,7 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": false
+      "publish": true
     },
     "github": {
       "release": true
