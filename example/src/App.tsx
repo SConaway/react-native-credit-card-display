@@ -29,6 +29,7 @@ export default function App() {
             cvc={123}
             expiration="06/21"
             name="John J. Doe"
+            since={2004}
           />
         </View>
         <View style={styles.cardContainer}>
@@ -60,6 +61,7 @@ export default function App() {
             cvc={123}
             expiration="06/21"
             name="John J. Doe"
+            borderRadius={50}
           />
         </View>
         <View style={styles.cardContainer}>

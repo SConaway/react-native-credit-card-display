@@ -43,14 +43,18 @@ type Props = {
 
   /** Is the card flipped? Use this to programmatically `flip` the card. */
   flipped?: boolean;
+
+  /** Border Radius to use on the images */
+  borderRadius?: number;
 } & typeof defaultProps;
 
 const defaultProps = {
   height: 190,
   width: 300,
-  fontSize: 20,
+  fontSize: 15,
   friction: 6,
   flipped: false,
+  borderRadius: 20,
 };
 
 const CreditCardDisplay = (props: Props) => {
@@ -126,10 +130,10 @@ const CreditCardDisplay = (props: Props) => {
             <ImageBackground
               source={require('./assets/images/card-front.png')}
               style={styles.imageBackground}
-              imageStyle={{ borderRadius: 15 }}
+              imageStyle={{ borderRadius: props.borderRadius }}
             >
               <View style={styles.imageContainer}>
-                <View style={{ height: '50%' }} />
+                <View style={{ flexGrow: 1 }} />
 
                 <Text
                   style={{
@@ -141,7 +145,7 @@ const CreditCardDisplay = (props: Props) => {
                   {creditcardutils.formatCardNumber(String(props.number))}
                 </Text>
 
-                <View style={{ flexDirection: 'row' }}>
+                <View style={styles.rowContainer}>
                   <View style={styles.groupContainer}>
                     {props.since && (
                       <>
@@ -191,11 +195,11 @@ const CreditCardDisplay = (props: Props) => {
                       </>
                     )}
                   </View>
-                  <View style={styles.cardImageContainer}>
+                  <View style={styles.cardTypeIconContainer}>
                     {cardTypeIcon && (
                       <Image
                         source={cardTypeIcon}
-                        style={styles.cardImage}
+                        style={styles.cardTypeIcon}
                         resizeMode="contain"
                       />
                     )}
@@ -258,17 +262,23 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     padding: 15,
+    flex: 1,
   },
-  cardImageContainer: {
+  cardTypeIconContainer: {
     justifyContent: 'center',
     height: 27,
     width: 27 * (125 / 80),
     alignItems: 'center',
+    backgroundColor: 'orange',
   },
-  cardImage: {
+  cardTypeIcon: {
     height: 25,
     width: 25 * (125 / 80),
     backgroundColor: 'white',
+  },
+  rowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
 
