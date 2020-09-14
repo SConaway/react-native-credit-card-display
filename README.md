@@ -1,6 +1,6 @@
 # react-native-credit-card-display
 
-Credit Card Component for React Native -- Display Only
+Credit Card Component for React Native -- Display Only. At the moment, it only supports Android and iOS, since `react-native-flip-card` only supports those two platforms.
 
 ## Installation
 
