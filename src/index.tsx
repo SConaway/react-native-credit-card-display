@@ -11,7 +11,7 @@ type Props = {
   /** Name to display on the front of the card */
   name: string;
 
-  /** cvc to display on the back of the card */
+  /** CVC to display on the back of the card */
   cvc: number | string;
 
   /** Expiration Date to display on the front of the card. displayed as given, so it should be formatted */
@@ -29,13 +29,13 @@ type Props = {
   /** Additional styles to apply to the component from `react-native-flip-card` */
   cardStyles?: object;
 
-  /** height for card. default: 190 */
+  /** Height for card. default: 190 */
   height?: number;
 
-  /** width for card. default: 300 */
+  /** Width for card. default: 300 */
   width?: number;
 
-  /** base font size to use. Will scale all displayed text. default: 20 */
+  /** Base font size to use. Will scale all displayed text. default: 20 */
   fontSize?: number;
 
   /** Friction for the card flip. I couldn't figure out what this does, but I'm just passing it to `react-native-flip-card` if anyone wants it */
@@ -269,7 +269,6 @@ const styles = StyleSheet.create({
     height: 27,
     width: 27 * (125 / 80),
     alignItems: 'center',
-    backgroundColor: 'orange',
   },
   cardTypeIcon: {
     height: 25,
