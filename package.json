@@ -28,8 +28,7 @@
     "pods": "cd example && pod-install --quiet",
     "stylecleanup": "stylecleanup fix \"{src,example}/**/*.{js,ts,tsx}\"",
     "bootstrap": "yarn example && yarn && yarn pods",
-    "release": "release-it",
-    "release-it": "release-it"
+    "release": "if [[ \"$npm_execpath\" == *\"yarn\"* ]]; then echo \"Don't use yarn, use npm instead\"; else release-it; fi"
   },
   "keywords": [
     "react-native",
