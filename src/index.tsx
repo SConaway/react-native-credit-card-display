@@ -38,6 +38,9 @@ type Props = {
   /** Base font size to use. Will scale all displayed text. default: 20 */
   fontSize?: number;
 
+  /** Text font color. Default: #FFFFFF (White) */
+  fontColor?: string;
+
   /** Friction for the card flip. I couldn't figure out what this does, but I'm just passing it to `react-native-flip-card` if anyone wants it */
   friction?: number;
 
@@ -52,6 +55,7 @@ const defaultProps = {
   height: 190,
   width: 300,
   fontSize: 15,
+  fontColor: '#FFFFFF',
   friction: 6,
   flipped: false,
   borderRadius: 20,
@@ -139,7 +143,7 @@ const CreditCardDisplay = (props: Props) => {
                   style={{
                     fontSize: props.fontSize,
                     alignSelf: 'center',
-                    color: '#222',
+                    color: props.fontColor,
                   }}
                 >
                   {creditcardutils.formatCardNumber(String(props.number))}
@@ -153,6 +157,7 @@ const CreditCardDisplay = (props: Props) => {
                           style={{
                             ...styles.groupLabel,
                             fontSize: props.fontSize * 0.7,
+                            color: props.fontColor,
                             textAlign: 'right',
                           }}
                         >
@@ -162,7 +167,7 @@ const CreditCardDisplay = (props: Props) => {
                         <Text
                           style={{
                             fontSize: props.fontSize * 0.7,
-                            color: '#222',
+                            color: props.fontColor,
                           }}
                         >
                           {props.since}
@@ -178,6 +183,7 @@ const CreditCardDisplay = (props: Props) => {
                           style={{
                             ...styles.groupLabel,
                             fontSize: props.fontSize * 0.7,
+                            color: props.fontColor,
                             textAlign: 'center',
                           }}
                         >
@@ -187,7 +193,7 @@ const CreditCardDisplay = (props: Props) => {
                         <Text
                           style={{
                             fontSize: props.fontSize * 0.7,
-                            color: '#222',
+                            color: props.fontColor,
                           }}
                         >
                           {creditcardutils.formatCardExpiry(props.expiration)}
@@ -209,7 +215,7 @@ const CreditCardDisplay = (props: Props) => {
                   style={{
                     fontSize: props.fontSize,
                     marginTop: 5,
-                    color: '#222',
+                    color: props.fontColor,
                   }}
                 >
                   {props.name}
@@ -256,7 +262,6 @@ const styles = StyleSheet.create({
     marginRight: '2%',
   },
   groupLabel: {
-    color: '#333',
     textAlignVertical: 'center',
     marginRight: '2%',
   },

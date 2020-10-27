@@ -104,6 +104,15 @@ export default function App() {
             name="John J. Doe"
           />
         </View>
+        <View style={styles.cardContainer}>
+          <CreditCardDisplay
+            number={3542424242424242}
+            cvc={123}
+            expiration="06/21"
+            name="John J. Doe"
+            fontColor="#222"
+          />
+        </View>
       </ScrollView>
     </View>
   );
