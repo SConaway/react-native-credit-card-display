@@ -70,6 +70,7 @@ export default function App() {
             cvc={123}
             expiration="06/21"
             name="John J. Doe"
+            fontColor="rgba(255, 192, 203, 0.25)"
           />
         </View>
         <View style={styles.cardContainer}>
