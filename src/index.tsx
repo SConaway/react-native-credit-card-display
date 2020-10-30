@@ -1,5 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Image,
+  ImageSourcePropType,
+} from 'react-native';
 
 import FlipCard from 'react-native-flip-card';
 import creditcardutils from 'creditcardutils';
@@ -25,6 +32,12 @@ type Props = {
 
   /** Additional styles to apply to the back of the card */
   backStyles?: object;
+
+  /** Alternate image to use for the front of the card */
+  frontImage?: ImageSourcePropType;
+
+  /** Alternate image to use for the back of the card */
+  backImage?: ImageSourcePropType;
 
   /** Additional styles to apply to the component from `react-native-flip-card` */
   cardStyles?: object;
@@ -59,6 +72,8 @@ const defaultProps = {
   friction: 6,
   flipped: false,
   borderRadius: 20,
+  frontImage: require('./assets/images/card-front.png'),
+  backImage: require('./assets/images/card-back.png'),
 };
 
 const CreditCardDisplay = (props: Props) => {
@@ -132,7 +147,7 @@ const CreditCardDisplay = (props: Props) => {
         <View style={props.frontStyles}>
           <View style={{ height: props.height, width: props.width }}>
             <ImageBackground
-              source={require('./assets/images/card-front.png')}
+              source={props.frontImage}
               style={styles.imageBackground}
               imageStyle={{ borderRadius: props.borderRadius }}
             >
@@ -228,7 +243,7 @@ const CreditCardDisplay = (props: Props) => {
         <View style={props.backStyles}>
           <View style={{ height: props.height, width: props.width }}>
             <ImageBackground
-              source={require('./assets/images/card-back.png')}
+              source={props.backImage}
               style={styles.imageBackground}
               imageStyle={{ borderRadius: 15 }}
             >

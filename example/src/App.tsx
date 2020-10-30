@@ -114,6 +114,33 @@ export default function App() {
             fontColor="#222"
           />
         </View>
+        <View style={styles.cardContainer}>
+          <CreditCardDisplay
+            number={3542424242424242}
+            cvc={123}
+            expiration="06/21"
+            name="John J. Doe"
+            fontColor="#222"
+            frontImage={{
+              uri:
+                'https://p.kindpng.com/picc/s/252-2524416_credit-card-hd-png-download.png',
+            }}
+            // You can do the same thing with backImage,
+            // just I didn't see any blank card images to use at the time
+          />
+        </View>
+        <View style={styles.cardContainer}>
+          <CreditCardDisplay
+            number={6242424242424242}
+            cvc={123}
+            expiration="06/21"
+            name="John J. Doe"
+            fontColor="#222"
+            frontImage={require('./assets/images/blankCard.png')}
+            // You can do the same thing with backImage,
+            // just I didn't see any blank card images to use at the time
+          />
+        </View>
       </ScrollView>
     </View>
   );
