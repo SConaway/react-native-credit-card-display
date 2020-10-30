@@ -8,15 +8,20 @@ Credit Card Component for React Native -- Display Only. At the moment, it only s
 npm install react-native-credit-card-display
 ```
 
+or
+
+```sh
+yarn add react-native-credit-card-display
+```
+
 ## Basic Example
 
 ```js
-import CreditCardDisplay from "react-native-credit-card-display";
+import CreditCardDisplay from 'react-native-credit-card-display';
 
 // ...
 
 return (
-  {/* ... */}
   <CreditCardDisplay
     number={4242424242424242}
     cvc={123}
@@ -24,7 +29,7 @@ return (
     name="John J. Doe"
     since="2004"
   />
-)
+);
 ```
 
 ## Props
