@@ -17,7 +17,7 @@ yarn add react-native-credit-card-display
 ## Usage
 
 ```js
-import CreditCardDisplay from "react-native-credit-card-display";
+import CreditCardDisplay from 'react-native-credit-card-display';
 
 // ...
 
@@ -41,7 +41,7 @@ return (
 | expiration   | Expiration Date to display on the front of the card                       | `undefined`       | Yes      | if passed a number (e.g. 0621), it will be formatted, otherwise displayed as given.                           |
 | cvc          | CVC to display on the back of the card                                    | `undefined`       | Yes      | can be a number or a string.                                                                                  |
 | since        | Year for `Customer Since`                                                 | `undefined`       | no       | can be a number or a string.                                                                                  |
-| flipped      | Is the card flipped?                                                      | `false`           | no       | Use this to programmatically `flip` the card.                                                                 |
+| flipped      | Is the card flipped?                                                      | `false`           | no       | Use this to programmatically toggle the card.                                                                 |
 | friction     | Friction for the card flip                                                | `6`               | no       | I couldn't figure out what this does, but I'm just passing it to `react-native-flip-card` if anyone wants it. |
 | fontSize     | Base font size to use                                                     | `20`              | no       | will scale all displayed text                                                                                 |
 | fontColor    | Color to use for the numbers and letters                                  | `#FFFFFF`         | no       |                                                                                                               |

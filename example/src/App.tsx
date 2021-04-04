@@ -11,7 +11,7 @@ import {
 import CreditCardDisplay from 'react-native-credit-card-display';
 
 export default function App() {
-  const [card2Flipped, setCard2Flipped] = React.useState(true);
+  const [card2Toggle, setCard2Toggle] = React.useState(true);
 
   return (
     <View style={styles.container}>
@@ -43,9 +43,9 @@ export default function App() {
             width={200}
             fontSize={12}
             friction={10}
-            flipped={card2Flipped}
+            flipped={card2Toggle}
           />
-          <Button onPress={() => setCard2Flipped(!card2Flipped)} title="Flip" />
+          <Button onPress={() => setCard2Toggle(!card2Toggle)} title="Toggle" />
         </View>
         <View style={styles.cardContainer}>
           <CreditCardDisplay
