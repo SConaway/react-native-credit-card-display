@@ -14,10 +14,10 @@ or
 yarn add react-native-credit-card-display
 ```
 
-## Basic Example
+## Usage
 
 ```js
-import CreditCardDisplay from 'react-native-credit-card-display';
+import CreditCardDisplay from "react-native-credit-card-display";
 
 // ...
 
