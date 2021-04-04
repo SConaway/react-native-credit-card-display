@@ -29,7 +29,8 @@
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
     "stylecleanup": "stylecleanup fix \"{src,example}/**/*.{js,ts,tsx}\"",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "release": "echo 'Run `npx release-it` instead' && exit 1"
   },
   "keywords": [
     "react-native",
