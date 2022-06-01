@@ -236,7 +236,7 @@ const CreditCardDisplay = (props: Props) => {
             <ImageBackground
               source={props.backImage}
               style={styles.imageBackground}
-              imageStyle={{ borderRadius: 15 }}
+              imageStyle={{ borderRadius: props.borderRadius }}
             >
               <View style={{ height: '45%' }} />
 
