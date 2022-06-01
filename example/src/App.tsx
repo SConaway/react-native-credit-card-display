@@ -122,8 +122,7 @@ export default function App() {
             name="John J. Doe"
             fontColor="#222"
             frontImage={{
-              uri:
-                'https://p.kindpng.com/picc/s/252-2524416_credit-card-hd-png-download.png',
+              uri: 'https://p.kindpng.com/picc/s/252-2524416_credit-card-hd-png-download.png',
             }}
             // You can do the same thing with backImage,
             // just I didn't see any blank card images to use at the time
